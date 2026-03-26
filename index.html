@@ -16,23 +16,99 @@
 
       <nav class="tabs">
         <button class="tab active" data-tab="spinner">Spinner</button>
-        <button class="tab" data-tab="bubble">Bubble Wrap</button>
-        <button class="tab" data-tab="stress">Stres Topu</button>
+        <button class="tab" data-tab="bubble">Bubble</button>
+        <button class="tab" data-tab="stress">Stres</button>
         <button class="tab" data-tab="clicker">Clicker</button>
       </nav>
 
       <!-- Spinner Tab -->
       <section id="spinner" class="panel active">
         <div class="spinner-container">
+          <!-- SVG Spinner: metalik alüminyum kollar + krom bearing -->
           <div class="spinner" id="spinnerEl">
-            <div class="spinner-arm"></div>
-            <div class="spinner-arm"></div>
-            <div class="spinner-arm"></div>
-            <div class="spinner-center"></div>
+            <svg viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Metalik kol gradyanı: fırçalanmış alüminyum -->
+                <linearGradient id="armGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="#f0f0f4"/>
+                  <stop offset="20%"  stop-color="#c8c8d2"/>
+                  <stop offset="45%"  stop-color="#a0a0aa"/>
+                  <stop offset="65%"  stop-color="#c4c4ce"/>
+                  <stop offset="100%" stop-color="#e8e8f0"/>
+                </linearGradient>
+                <!-- Kol kenar gölgesi -->
+                <filter id="armShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="rgba(0,0,0,0.5)"/>
+                </filter>
+                <!-- Krom bearing gradyanı -->
+                <radialGradient id="bearingGrad" cx="38%" cy="32%" r="60%">
+                  <stop offset="0%"   stop-color="#ffffff"/>
+                  <stop offset="15%"  stop-color="#e8e8ec"/>
+                  <stop offset="40%"  stop-color="#b0b0b8"/>
+                  <stop offset="65%"  stop-color="#808088"/>
+                  <stop offset="85%"  stop-color="#606068"/>
+                  <stop offset="100%" stop-color="#404048"/>
+                </radialGradient>
+                <!-- Bearing dış halka -->
+                <radialGradient id="ringGrad" cx="30%" cy="25%" r="70%">
+                  <stop offset="0%"   stop-color="#e0e0e8"/>
+                  <stop offset="50%"  stop-color="#a0a0a8"/>
+                  <stop offset="100%" stop-color="#585860"/>
+                </radialGradient>
+                <!-- Bearing iç gloss -->
+                <radialGradient id="bearingGloss" cx="35%" cy="25%" r="55%">
+                  <stop offset="0%"   stop-color="rgba(255,255,255,0.7)"/>
+                  <stop offset="50%"  stop-color="rgba(255,255,255,0.1)"/>
+                  <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                </radialGradient>
+                <!-- Tüm spinner gölgesi -->
+                <filter id="spinnerShadow">
+                  <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="rgba(0,0,0,0.6)"/>
+                </filter>
+              </defs>
+
+              <!-- 3 kol (120° aralıklı) -->
+              <g filter="url(#spinnerShadow)">
+                <!-- Kol 1: saat 12 yönü -->
+                <ellipse cx="100" cy="42" rx="22" ry="30" fill="url(#armGrad)"
+                         stroke="rgba(0,0,0,0.25)" stroke-width="1"
+                         transform="rotate(0, 100, 100)"/>
+                <!-- Kol 2: saat 4 yönü -->
+                <ellipse cx="100" cy="42" rx="22" ry="30" fill="url(#armGrad)"
+                         stroke="rgba(0,0,0,0.25)" stroke-width="1"
+                         transform="rotate(120, 100, 100)"/>
+                <!-- Kol 3: saat 8 yönü -->
+                <ellipse cx="100" cy="42" rx="22" ry="30" fill="url(#armGrad)"
+                         stroke="rgba(0,0,0,0.25)" stroke-width="1"
+                         transform="rotate(240, 100, 100)"/>
+
+                <!-- Her kol üzerinde metalik highlight çizgisi -->
+                <line x1="100" y1="22" x2="100" y2="58"
+                      stroke="rgba(255,255,255,0.5)" stroke-width="2.5"
+                      transform="rotate(0, 100, 100)"/>
+                <line x1="100" y1="22" x2="100" y2="58"
+                      stroke="rgba(255,255,255,0.5)" stroke-width="2.5"
+                      transform="rotate(120, 100, 100)"/>
+                <line x1="100" y1="22" x2="100" y2="58"
+                      stroke="rgba(255,255,255,0.5)" stroke-width="2.5"
+                      transform="rotate(240, 100, 100)"/>
+              </g>
+
+              <!-- Bearing dış halka (chrome ring) -->
+              <circle cx="100" cy="100" r="26" fill="url(#ringGrad)"
+                      stroke="rgba(0,0,0,0.4)" stroke-width="1.5"/>
+              <!-- Bearing yüzeyi -->
+              <circle cx="100" cy="100" r="20" fill="url(#bearingGrad)"/>
+              <!-- Bearing gloss -->
+              <ellipse cx="93" cy="91" rx="10" ry="8" fill="url(#bearingGloss)"/>
+              <!-- Bearing merkez noktası -->
+              <circle cx="100" cy="100" r="3.5" fill="rgba(30,30,35,0.8)"/>
+              <circle cx="98.5" cy="98.5" r="1.5" fill="rgba(255,255,255,0.6)"/>
+            </svg>
           </div>
         </div>
         <div class="spinner-controls">
-          <p class="hint">Spinner'a tıkla veya kaydır!</p>
+          <p class="hint">Spinner'a tıkla veya sürükle!</p>
           <div class="speed-display">
             Hız: <span id="speedDisplay">0</span> rpm
           </div>
@@ -52,9 +128,54 @@
       <section id="stress" class="panel">
         <div class="stress-container">
           <div class="stress-ball" id="stressBall">
+            <!-- SVG Stress Ball: gerçekçi kauçuk top -->
+            <svg viewBox="0 0 180 180" width="180" height="180" xmlns="http://www.w3.org/2000/svg" class="stress-svg">
+              <defs>
+                <!-- Ana kauçuk yüzey -->
+                <radialGradient id="ballMain" cx="36%" cy="30%" r="65%">
+                  <stop offset="0%"   stop-color="#ff9060"/>
+                  <stop offset="25%"  stop-color="#e85c28"/>
+                  <stop offset="55%"  stop-color="#c43c10"/>
+                  <stop offset="80%"  stop-color="#a02808"/>
+                  <stop offset="100%" stop-color="#701800"/>
+                </radialGradient>
+                <!-- Alt-kenar subsurface scattering gölgesi -->
+                <radialGradient id="ballShadow" cx="60%" cy="78%" r="50%">
+                  <stop offset="0%"   stop-color="rgba(60,10,0,0.55)"/>
+                  <stop offset="100%" stop-color="rgba(60,10,0,0)"/>
+                </radialGradient>
+                <!-- Üst specular highlight -->
+                <radialGradient id="ballSpec" cx="32%" cy="26%" r="40%">
+                  <stop offset="0%"   stop-color="rgba(255,255,255,0.70)"/>
+                  <stop offset="40%"  stop-color="rgba(255,255,255,0.18)"/>
+                  <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                </radialGradient>
+                <!-- Küçük sert parlama noktası -->
+                <radialGradient id="ballGlint" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%"   stop-color="rgba(255,255,255,0.90)"/>
+                  <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                </radialGradient>
+                <!-- Gölge filtresi -->
+                <filter id="ballDrop">
+                  <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="rgba(0,0,0,0.55)"/>
+                </filter>
+              </defs>
+
+              <!-- Top gövdesi -->
+              <circle cx="90" cy="90" r="82" fill="url(#ballMain)" filter="url(#ballDrop)"/>
+              <!-- Alt-kenar gölge (derinlik) -->
+              <circle cx="90" cy="90" r="82" fill="url(#ballShadow)"/>
+              <!-- Büyük yumuşak highlight -->
+              <ellipse cx="70" cy="64" rx="40" ry="32" fill="url(#ballSpec)"/>
+              <!-- Küçük sert glint -->
+              <ellipse cx="62" cy="54" rx="12" ry="9" fill="url(#ballGlint)"/>
+              <!-- İnce kenar halkası (derinlik için) -->
+              <circle cx="90" cy="90" r="81" fill="none"
+                      stroke="rgba(0,0,0,0.18)" stroke-width="2"/>
+            </svg>
             <span class="stress-face" id="stressFace">😐</span>
           </div>
-          <p class="hint">Tıkla veya bas!</p>
+          <p class="hint">Tıkla veya basılı tut!</p>
           <div class="squeeze-bar">
             <div class="squeeze-fill" id="squeezeFill"></div>
           </div>
@@ -66,6 +187,32 @@
       <section id="clicker" class="panel">
         <div class="clicker-container">
           <div class="button-bezel">
+            <!-- SVG arcade button + chrome ring -->
+            <svg viewBox="0 0 240 240" width="240" height="240" class="bezel-svg" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Chrome dış halka -->
+                <linearGradient id="chromeRing" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="#f8f8fc"/>
+                  <stop offset="18%"  stop-color="#d0d0d8"/>
+                  <stop offset="35%"  stop-color="#f4f4f8"/>
+                  <stop offset="52%"  stop-color="#a0a0a8"/>
+                  <stop offset="68%"  stop-color="#c8c8d0"/>
+                  <stop offset="85%"  stop-color="#e8e8f0"/>
+                  <stop offset="100%" stop-color="#b0b0b8"/>
+                </linearGradient>
+                <filter id="ringGlow">
+                  <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="rgba(0,0,0,0.6)"/>
+                </filter>
+              </defs>
+              <!-- Chrome halka -->
+              <circle cx="120" cy="120" r="118" fill="url(#chromeRing)"
+                      filter="url(#ringGlow)"
+                      stroke="rgba(0,0,0,0.3)" stroke-width="1"/>
+              <!-- İç gölge çukuru -->
+              <circle cx="120" cy="120" r="104" fill="rgba(0,0,0,0.4)"/>
+            </svg>
+
+            <!-- Asıl buton -->
             <div class="big-button" id="clickerBtn">
               <div class="button-dome">
                 <span class="click-count" id="clickCount">0</span>
@@ -73,6 +220,7 @@
               </div>
             </div>
           </div>
+
           <div class="clicker-stats">
             <div class="stat">
               <span class="stat-value" id="totalClicks">0</span>
