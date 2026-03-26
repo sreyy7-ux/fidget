@@ -28,8 +28,10 @@
    BODY — Dark leather desk
    =========================== */
 body {
-  background-color: #2a1608;
+  /* Koyu gri doku (#3b-#45) açık kahve zeminde belirgin görünür */
+  background-color: #a06830;
   background-image: url("textures/dark-leather.png");
+  background-blend-mode: multiply;
   color: var(--text-dark);
   font-family: 'Segoe UI', system-ui, sans-serif;
   min-height: 100vh;
@@ -45,8 +47,9 @@ body {
 .app {
   width: 100%;
   max-width: 500px;
-  background-color: #c8bfae;
+  background-color: #f0e8d8;
   background-image: url("textures/cream-paper.png");
+  background-blend-mode: multiply;
   border-radius: 28px;
   padding: 5px;
   box-shadow:
@@ -60,8 +63,9 @@ body {
 }
 
 .app-inner {
-  background-color: #e8dfc8;
+  background-color: #f5ede0;
   background-image: url("textures/cream-paper.png");
+  background-blend-mode: multiply;
   border-radius: 24px;
   padding: 20px 16px 26px;
   box-shadow:
@@ -103,8 +107,9 @@ header h1 {
   display: flex;
   gap: 6px;
   margin-bottom: 20px;
-  background-color: #b0a490;
+  background-color: #d8c8b0;
   background-image: url("textures/cream-paper.png");
+  background-blend-mode: multiply;
   padding: 7px;
   border-radius: 18px;
   box-shadow:
@@ -124,8 +129,9 @@ header h1 {
   font-weight: 700;
   letter-spacing: 0.4px;
   color: var(--text-mid);
-  background-color: #ede0c8;
+  background-color: #f8f0e0;
   background-image: url("textures/cream-paper.png");
+  background-blend-mode: multiply;
   transition: all 0.10s ease;
   box-shadow: var(--raised-shadow);
   text-shadow:
@@ -146,8 +152,9 @@ header h1 {
 }
 
 .tab.active {
-  background-color: #c8b89a;
+  background-color: #ddc8a8;
   background-image: url("textures/cream-paper.png");
+  background-blend-mode: multiply;
   color: #3a2810;
   font-weight: 800;
   box-shadow: var(--sunken-shadow);
@@ -162,8 +169,9 @@ header h1 {
    =========================== */
 .panel {
   display: none;
-  background-color: #e8dfc8;
+  background-color: #f8f0e0;
   background-image: url("textures/cream-paper.png");
+  background-blend-mode: multiply;
   border-radius: 20px;
   padding: 30px 24px;
   min-height: 400px;
@@ -193,9 +201,10 @@ header h1 {
   width: 260px;
   cursor: grab;
   user-select: none;
-  /* Machined aluminum platter */
-  background-color: #d0cccc;
+  /* Machined aluminum platter — açık gri doku koyu zeminde görünür */
+  background-color: #e8e8f0;
   background-image: url("textures/brushed-alum.png");
+  background-blend-mode: multiply;
   border-radius: 50%;
   box-shadow:
     0 10px 28px rgba(0,0,0,0.38),
@@ -225,8 +234,9 @@ header h1 {
   margin: -35px 0 0 -35px;
   transform-origin: 35px 35px;
   /* Brushed aluminum arm */
-  background-color: #b8b8c0;
+  background-color: #e0e0e8;
   background-image: url("textures/brushed-alum.png");
+  background-blend-mode: multiply;
   box-shadow:
     inset 0 3px 4px rgba(255,255,255,0.75),
     inset 1px 0 2px rgba(255,255,255,0.40),
@@ -449,8 +459,9 @@ header h1 {
   height: 14px;
   border-radius: 7px;
   overflow: hidden;
-  background-color: #b0a494;
+  background-color: #e0cbb8;
   background-image: url("textures/cream-paper.png");
+  background-blend-mode: multiply;
   box-shadow: var(--sunken-shadow);
 }
 
@@ -486,8 +497,9 @@ header h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #b8b8c2;
+  background-color: #e0e0ea;
   background-image: url("textures/brushed-alum.png");
+  background-blend-mode: multiply;
   box-shadow:
     0 14px 36px rgba(0,0,0,0.45),
     0 5px 14px rgba(0,0,0,0.26),
@@ -620,8 +632,9 @@ header h1 {
   min-width: 82px;
   padding: 12px 16px;
   border-radius: 12px;
-  background-color: #c0b29e;
+  background-color: #e8d8c4;
   background-image: url("textures/cream-paper.png");
+  background-blend-mode: multiply;
   box-shadow: var(--sunken-shadow);
   border: 1px solid rgba(0,0,0,0.08);
 }
@@ -656,8 +669,9 @@ header h1 {
   font-weight: 700;
   letter-spacing: 0.5px;
   color: #4a3820;
-  background-color: #ddd0b8;
+  background-color: #f5ead8;
   background-image: url("textures/cream-paper.png");
+  background-blend-mode: multiply;
   transition: all 0.10s ease;
   box-shadow: var(--raised-shadow);
   text-shadow:
@@ -678,7 +692,7 @@ header h1 {
 }
 
 .btn:active {
-  background-color: #c8b8a0;
+  background-color: #ddcbb0;
   box-shadow: var(--sunken-shadow);
   transform: translateY(1px);
 }
