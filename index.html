@@ -24,87 +24,12 @@
       <!-- Spinner Tab -->
       <section id="spinner" class="panel active">
         <div class="spinner-container">
-          <!-- SVG Spinner: metalik alüminyum kollar + krom bearing -->
+          <!-- Gerçek fidget spinner fotoğrafı -->
           <div class="spinner" id="spinnerEl">
-            <svg viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <!-- Metalik kol gradyanı: fırçalanmış alüminyum -->
-                <linearGradient id="armGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%"   stop-color="#f0f0f4"/>
-                  <stop offset="20%"  stop-color="#c8c8d2"/>
-                  <stop offset="45%"  stop-color="#a0a0aa"/>
-                  <stop offset="65%"  stop-color="#c4c4ce"/>
-                  <stop offset="100%" stop-color="#e8e8f0"/>
-                </linearGradient>
-                <!-- Kol kenar gölgesi -->
-                <filter id="armShadow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="rgba(0,0,0,0.5)"/>
-                </filter>
-                <!-- Krom bearing gradyanı -->
-                <radialGradient id="bearingGrad" cx="38%" cy="32%" r="60%">
-                  <stop offset="0%"   stop-color="#ffffff"/>
-                  <stop offset="15%"  stop-color="#e8e8ec"/>
-                  <stop offset="40%"  stop-color="#b0b0b8"/>
-                  <stop offset="65%"  stop-color="#808088"/>
-                  <stop offset="85%"  stop-color="#606068"/>
-                  <stop offset="100%" stop-color="#404048"/>
-                </radialGradient>
-                <!-- Bearing dış halka -->
-                <radialGradient id="ringGrad" cx="30%" cy="25%" r="70%">
-                  <stop offset="0%"   stop-color="#e0e0e8"/>
-                  <stop offset="50%"  stop-color="#a0a0a8"/>
-                  <stop offset="100%" stop-color="#585860"/>
-                </radialGradient>
-                <!-- Bearing iç gloss -->
-                <radialGradient id="bearingGloss" cx="35%" cy="25%" r="55%">
-                  <stop offset="0%"   stop-color="rgba(255,255,255,0.7)"/>
-                  <stop offset="50%"  stop-color="rgba(255,255,255,0.1)"/>
-                  <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-                </radialGradient>
-                <!-- Tüm spinner gölgesi -->
-                <filter id="spinnerShadow">
-                  <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="rgba(0,0,0,0.6)"/>
-                </filter>
-              </defs>
-
-              <!-- 3 kol (120° aralıklı) -->
-              <g filter="url(#spinnerShadow)">
-                <!-- Kol 1: saat 12 yönü -->
-                <ellipse cx="100" cy="42" rx="22" ry="30" fill="url(#armGrad)"
-                         stroke="rgba(0,0,0,0.25)" stroke-width="1"
-                         transform="rotate(0, 100, 100)"/>
-                <!-- Kol 2: saat 4 yönü -->
-                <ellipse cx="100" cy="42" rx="22" ry="30" fill="url(#armGrad)"
-                         stroke="rgba(0,0,0,0.25)" stroke-width="1"
-                         transform="rotate(120, 100, 100)"/>
-                <!-- Kol 3: saat 8 yönü -->
-                <ellipse cx="100" cy="42" rx="22" ry="30" fill="url(#armGrad)"
-                         stroke="rgba(0,0,0,0.25)" stroke-width="1"
-                         transform="rotate(240, 100, 100)"/>
-
-                <!-- Her kol üzerinde metalik highlight çizgisi -->
-                <line x1="100" y1="22" x2="100" y2="58"
-                      stroke="rgba(255,255,255,0.5)" stroke-width="2.5"
-                      transform="rotate(0, 100, 100)"/>
-                <line x1="100" y1="22" x2="100" y2="58"
-                      stroke="rgba(255,255,255,0.5)" stroke-width="2.5"
-                      transform="rotate(120, 100, 100)"/>
-                <line x1="100" y1="22" x2="100" y2="58"
-                      stroke="rgba(255,255,255,0.5)" stroke-width="2.5"
-                      transform="rotate(240, 100, 100)"/>
-              </g>
-
-              <!-- Bearing dış halka (chrome ring) -->
-              <circle cx="100" cy="100" r="26" fill="url(#ringGrad)"
-                      stroke="rgba(0,0,0,0.4)" stroke-width="1.5"/>
-              <!-- Bearing yüzeyi -->
-              <circle cx="100" cy="100" r="20" fill="url(#bearingGrad)"/>
-              <!-- Bearing gloss -->
-              <ellipse cx="93" cy="91" rx="10" ry="8" fill="url(#bearingGloss)"/>
-              <!-- Bearing merkez noktası -->
-              <circle cx="100" cy="100" r="3.5" fill="rgba(30,30,35,0.8)"/>
-              <circle cx="98.5" cy="98.5" r="1.5" fill="rgba(255,255,255,0.6)"/>
-            </svg>
+            <img src="https://pngimg.com/uploads/spinner/spinner_PNG99779.png"
+                 alt="Fidget Spinner"
+                 class="spinner-img"
+                 draggable="false" />
           </div>
         </div>
         <div class="spinner-controls">

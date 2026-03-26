@@ -268,9 +268,19 @@ header h1 {
   justify-content: center;
 }
 
-/* Eski spinner-arm ve spinner-center'ı gizle (SVG kullanıyoruz) */
+/* Eski spinner-arm ve spinner-center'ı gizle */
 .spinner-arm, .spinner-center {
   display: none;
+}
+
+.spinner-img {
+  width: 210px;
+  height: 210px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,0.75))
+          drop-shadow(0 4px 8px rgba(0,0,0,0.5));
 }
 
 .spinner-controls {
