@@ -8,83 +8,89 @@
 </head>
 <body>
   <div class="app">
-    <header>
-      <h1>🎮 Fidget Oyunu</h1>
-      <p class="subtitle">Stresini at, eğlen!</p>
-    </header>
+    <div class="app-inner">
+      <header>
+        <h1>Fidget Oyunu</h1>
+        <p class="subtitle">Stresini at, eğlen!</p>
+      </header>
 
-    <nav class="tabs">
-      <button class="tab active" data-tab="spinner">Spinner</button>
-      <button class="tab" data-tab="bubble">Bubble Wrap</button>
-      <button class="tab" data-tab="stress">Stres Topu</button>
-      <button class="tab" data-tab="clicker">Clicker</button>
-    </nav>
+      <nav class="tabs">
+        <button class="tab active" data-tab="spinner">Spinner</button>
+        <button class="tab" data-tab="bubble">Bubble Wrap</button>
+        <button class="tab" data-tab="stress">Stres Topu</button>
+        <button class="tab" data-tab="clicker">Clicker</button>
+      </nav>
 
-    <!-- Spinner Tab -->
-    <section id="spinner" class="panel active">
-      <div class="spinner-container">
-        <div class="spinner" id="spinnerEl">
-          <div class="spinner-arm"></div>
-          <div class="spinner-arm"></div>
-          <div class="spinner-arm"></div>
-          <div class="spinner-center"></div>
-        </div>
-      </div>
-      <div class="spinner-controls">
-        <p class="hint">Spinner'a tıkla veya kaydır!</p>
-        <div class="speed-display">
-          Hız: <span id="speedDisplay">0</span> rpm
-        </div>
-      </div>
-    </section>
-
-    <!-- Bubble Wrap Tab -->
-    <section id="bubble" class="panel">
-      <div class="bubble-grid" id="bubbleGrid"></div>
-      <div class="bubble-controls">
-        <span class="popped-count">Patlatılan: <span id="poppedCount">0</span></span>
-        <button class="btn" id="resetBubbles">Yenile</button>
-      </div>
-    </section>
-
-    <!-- Stress Ball Tab -->
-    <section id="stress" class="panel">
-      <div class="stress-container">
-        <div class="stress-ball" id="stressBall">
-          <span class="stress-face" id="stressFace">😐</span>
-        </div>
-        <p class="hint">Tıkla veya bas!</p>
-        <div class="squeeze-bar">
-          <div class="squeeze-fill" id="squeezeFill"></div>
-        </div>
-        <p class="squeeze-label">Sıkıştırma gücü</p>
-      </div>
-    </section>
-
-    <!-- Clicker Tab -->
-    <section id="clicker" class="panel">
-      <div class="clicker-container">
-        <div class="big-button" id="clickerBtn">
-          <span class="click-count" id="clickCount">0</span>
-          <span class="click-label">TIKLA!</span>
-        </div>
-        <div class="clicker-stats">
-          <div class="stat">
-            <span class="stat-value" id="totalClicks">0</span>
-            <span class="stat-label">Toplam</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value" id="cps">0</span>
-            <span class="stat-label">Tık/sn</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value" id="bestCps">0</span>
-            <span class="stat-label">En iyi</span>
+      <!-- Spinner Tab -->
+      <section id="spinner" class="panel active">
+        <div class="spinner-container">
+          <div class="spinner" id="spinnerEl">
+            <div class="spinner-arm"></div>
+            <div class="spinner-arm"></div>
+            <div class="spinner-arm"></div>
+            <div class="spinner-center"></div>
           </div>
         </div>
-        <button class="btn" id="resetClicker">Sıfırla</button>
-      </div>
-    </section>
+        <div class="spinner-controls">
+          <p class="hint">Spinner'a tıkla veya kaydır!</p>
+          <div class="speed-display">
+            Hız: <span id="speedDisplay">0</span> rpm
+          </div>
+        </div>
+      </section>
+
+      <!-- Bubble Wrap Tab -->
+      <section id="bubble" class="panel">
+        <div class="bubble-grid" id="bubbleGrid"></div>
+        <div class="bubble-controls">
+          <span class="popped-count">Patlatılan: <span id="poppedCount">0</span></span>
+          <button class="btn" id="resetBubbles">Yenile</button>
+        </div>
+      </section>
+
+      <!-- Stress Ball Tab -->
+      <section id="stress" class="panel">
+        <div class="stress-container">
+          <div class="stress-ball" id="stressBall">
+            <span class="stress-face" id="stressFace">😐</span>
+          </div>
+          <p class="hint">Tıkla veya bas!</p>
+          <div class="squeeze-bar">
+            <div class="squeeze-fill" id="squeezeFill"></div>
+          </div>
+          <p class="squeeze-label">Sıkıştırma gücü</p>
+        </div>
+      </section>
+
+      <!-- Clicker Tab -->
+      <section id="clicker" class="panel">
+        <div class="clicker-container">
+          <div class="button-bezel">
+            <div class="big-button" id="clickerBtn">
+              <div class="button-dome">
+                <span class="click-count" id="clickCount">0</span>
+                <span class="click-label">TIKLA!</span>
+              </div>
+            </div>
+          </div>
+          <div class="clicker-stats">
+            <div class="stat">
+              <span class="stat-value" id="totalClicks">0</span>
+              <span class="stat-label">Toplam</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" id="cps">0</span>
+              <span class="stat-label">Tık/sn</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" id="bestCps">0</span>
+              <span class="stat-label">En iyi</span>
+            </div>
+          </div>
+          <button class="btn" id="resetClicker">Sıfırla</button>
+        </div>
+      </section>
+    </div>
   </div>
 
   <script src="game.js"></script>
